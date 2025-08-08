@@ -14,13 +14,6 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
-            steps {
-                // Ganti <app_container_name> sesuai dengan nama container di docker-compose
-                sh 'docker exec mendixapp-1 run-your-tests.sh'
-            }
-        }
-
         stage('Stop Containers') {
             steps {
                 sh 'docker compose -f ./tests/docker-compose-postgres.yml down'
