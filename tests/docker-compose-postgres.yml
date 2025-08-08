@@ -3,6 +3,7 @@ version: "2.3"
 services:
     mendixapp:
         image: vstram/mx_docker_app:1.0
+        container_name: mendixapp-1
         healthcheck:
             test: ["CMD", "curl", "-f", "http://localhost"]
             interval: 15s
@@ -85,6 +86,7 @@ services:
         # restart: always
     db:
         image: postgres:13
+        container_name: db-1
         healthcheck:
             test: ["CMD", "pg_isready", "-U", "mendix"]
             interval: 5s

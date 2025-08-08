@@ -17,7 +17,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 // Ganti <app_container_name> sesuai dengan nama container di docker-compose
-                sh 'docker exec <app_container_name> run-your-tests.sh'
+                sh 'docker exec mendixapp-1 run-your-tests.sh'
             }
         }
 
